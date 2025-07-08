@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Pekerjaan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/daftar_pekerjaan.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container1">
+        <h1>Daftar Pekerjaan</h1>
+        <div class="line"></div>
+        <div class="grid">
+            <a href="/uiux" class="job-card">
+                <img src="{{ url_for('static', filename='images/UIUX.jpg') }}" alt="UI/UX Job">
+                <p>ui/ux</p>
+            </a>
+            <a href="/digital-marketing" class="job-card">
+                <img src="{{ url_for('static', filename='images/digital_marketing.jpg') }}" alt="Digital Marketing Job">
+                <p>Digital Marketing</p>
+            </a>
+            <a href="/web-developer" class="job-card">
+                <img src="{{ url_for('static', filename='images/web_developer.jpg') }}" alt="Web Developer Job">
+                <p>Web Developer</p>
+            </a>
+            <a href="/graphic-designer" class="job-card">
+                <img src="{{ url_for('static', filename='images/graphic_designer.jpg') }}" alt="Graphic Designer Job">
+                <p>Graphic Designer</p>
+            </a>
+            <a href="/content-writer" class="job-card">
+                <img src="https://storage.googleapis.com/a1aa/image/RAFJCdEEt9YNF5ujw0LQdxCp10KUwfN6fesJmLPKMumodHrnA.jpg" alt="Content Writer Job">
+                <p>Content Writer</p>
+            </a>
+            <a href="/mobile-developer" class="job-card">
+                <img src="https://storage.googleapis.com/a1aa/image/RAFJCdEEt9YNF5ujw0LQdxCp10KUwfN6fesJmLPKMumodHrnA.jpg" alt="Mobile Developer Job">
+                <p>Mobile Developer</p>
+            </a>
+            <a href="/programming" class="job-card">
+                <img src="https://storage.googleapis.com/a1aa/image/RAFJCdEEt9YNF5ujw0LQdxCp10KUwfN6fesJmLPKMumodHrnA.jpg" alt="Programming Job">
+                <p>Programming</p>
+            </a>
+            <a href="/frontend" class="job-card">
+                <img src="https://storage.googleapis.com/a1aa/image/RAFJCdEEt9YNF5ujw0LQdxCp10KUwfN6fesJmLPKMumodHrnA.jpg" alt="Frontend Job">
+                <p>Frontend</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

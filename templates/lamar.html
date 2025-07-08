@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Job Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lamar.css') }}">
+</head>
+<body>
+    <div class="header">
+        <img src="{{ url_for('static', filename='images/lamaran.png') }}" alt="Gambar Lamaran Kerja">
+        <div>
+            <h1>Surat Lamaran Kerja</h1>
+            <p>Silakan lengkapi formulir di bawah ini untuk mengirim lamaran Anda.</p>
+        </div>
+    </div>
+    <div class="container">
+        <form action="/thx" method="POST" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nama">Nama</label>
+                    <input id="nama" name="nama" type="text" required>
+                </div>
+                <div class="form-group">
+                    <label for="instasi">Instansi</label>
+                    <input id="instasi" name="instasi" type="text" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="pengalaman">Pengalaman</label>
+                    <input id="pengalaman" name="pengalaman" type="text">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nohp">No. HP</label>
+                    <input id="nohp" name="nohp" type="text" required>
+                </div>
+                <div class="form-group">
+                    <label for="uploadcv">Upload CV</label>
+                    <input id="uploadcv" name="uploadcv" type="file" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="Kirim-Lamaran-btn">Kirim Lamaran</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

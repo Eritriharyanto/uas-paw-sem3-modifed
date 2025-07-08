@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aksara Jobs</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/home.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo"><span class="highlight">Aksara</span> Jobs</div>
+      <div class="auth-buttons">
+        {% if current_user.is_authenticated %}
+        <button onclick="window.location.href='{{ url_for('profil') }}'">
+          Profil
+        </button>
+        <button onclick="window.location.href='{{ url_for('logout') }}'">
+          Logout
+        </button>
+        {% else %}
+        <button onclick="window.location.href='{{ url_for('login') }}'">
+          Login
+        </button>
+        {% endif %}
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>CARI PEKERJAAN IMPIANMU DENGAN MUDAH</h1>
+      <p>
+        Temukan berbagai kesempatan pekerjaan terbaik dan mulai perjalanan
+        karirmu hari ini. Apakah kamu mencari pekerjaan penuh waktu atau paruh
+        waktu, kami siap membantu. Pekerjaan berikutnya hanya dengan satu klik!
+      </p>
+
+      <div class="search-bar">
+        <form
+          method="GET"
+          action="{{ url_for('Cari') }}"
+          onsubmit="return validateSearch()"
+        >
+          <input
+            id="companyInput"
+            name="company"
+            type="text"
+            placeholder="Nama Perusahaan"
+          />
+          <input
+            id="locationInput"
+            name="location"
+            type="text"
+            placeholder="Lokasi"
+          />
+          <button type="submit" class="Cari">Cari</button>
+
+          <p
+            id="error-message"
+            style="color: red; font-size: 14px; display: none"
+          ></p>
+          <button
+            type="button"
+            class="lihat-daftar-btn"
+            onclick="window.location.href='{{ url_for('lihat_daftar_pekerjaan') }}'"
+          >
+            Lihat Daftar Pekerjaan
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Background Style -->
+    <style>
+      .hero {
+        text-align: center;
+        background-image: url("{{ url_for('static', filename='images/background.jpeg') }}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: #f9b400;
+        padding: 100px 20px;
+      }
+
+      .auth-buttons button {
+        margin-left: 10px;
+      }
+    </style>
+
+    <!-- JavaScript inline untuk validasi -->
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+  </body>
+</html>

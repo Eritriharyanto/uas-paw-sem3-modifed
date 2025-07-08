@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Lamaran Terkirim</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/thx.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img
+                src="{{ url_for('static', filename='images/your_image.png') }}"
+                width="100"
+                height="100"
+            />
+            <h1>Terima Kasih!</h1>
+            <p>Lamaran Anda telah berhasil terkirim.</p>
+        </div>
+        <div class="content">
+            <p>
+                Terima kasih telah melamar posisi yang tersedia di perusahaan kami. Tim kami akan segera meninjau lamaran Anda. 
+                Jika lamaran Anda memenuhi kriteria, kami akan menghubungi Anda untuk langkah selanjutnya.
+            </p>
+            <p>
+                Jika ada pertanyaan lebih lanjut, jangan ragu untuk menghubungi kami melalui email atau telepon yang tercantum pada website.
+            </p>
+            <div class="button-container">
+                <button class="kembali-btn" onclick="window.location.href='/'">
+                    <i class="fas fa-home"></i> Kembali ke Beranda
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

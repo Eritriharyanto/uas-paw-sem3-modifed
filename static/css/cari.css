@@ -1,0 +1,126 @@
+/* Navbar */
+.navbar1 {
+  background-color: #b3cde0; /* Frosty blue */
+  color: #ffffff;
+  padding: 10px 20px;
+}
+
+.navbar1 ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.navbar1 ul li {
+  font-family: 'Poppins', sans-serif; /* Ganti dengan font yang diinginkan */
+  font-size: 24px; /* Sesuaikan ukuran font */
+  font-weight: bold;
+}
+
+.yellow {
+  color: #f9b400; /* Warna teks depan */
+  font-family: 'Lobster', cursive;
+}
+
+.black {
+  color: #2c3339; /* Warna teks belakang */
+}
+
+
+/* Content */
+.content1 {
+  display: flex;
+  margin: 20px;
+  gap: 20px;
+}
+
+/* Job List */
+.job-list {
+  width: 30%;
+  background: #f0f8ff; /* Light icy blue */
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.job-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #a2cffe; /* Subtle frosty border */
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.job-card img {
+  width: 50px;
+  height: 50px;
+  background: #d4e6f1; /* Cool icy tone */
+  border-radius: 5px;
+}
+
+.job-card h3 {
+  margin: 0;
+}
+
+.job-card p {
+  margin: 5px 0;
+  color: #2c3e50; /* Dark wintery text */
+  font-size: 12px;
+}
+
+/* Job Details */
+.job-details {
+  width: 70%;
+  background: #f0f8ff; /* Light icy blue */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  background: #5ca3ff; /* Cool blue */
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.tab:hover {
+  background: #d6eaf8; /* Frosty hover effect */
+}
+
+.details h3,
+.details h4 {
+  margin: 10px 0;
+  color: #34495e; /* Wintery dark blue */
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.actions button {
+  background-color: #007bff; /* Icy blue button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.actions button:hover {
+  background-color: #0056b3; /* Frosty dark blue */
+}
+
+ul, li {
+  color: #34495e; /* Wintery dark blue */
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profil.css') }}">
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="{{ url_for('static', filename='images/profil.jpg') }}" alt="User Icon" class="profile-icon">
+            <h1>Profil</h1>
+        </div>
+        <form class="profile-form" action="{{ url_for('update_profile') }}" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" value="{{ current_user.name }}">
+            </div>
+            <div class="form-group">
+                <label for="experience">Pengalaman</label>
+                <input type="text" id="experience" name="experience" placeholder="Masukkan pengalaman" value="{{ current_user.experience }}">
+            </div>
+            <div class="form-group">
+                <label for="skills">Skill</label>
+                <input type="text" id="skills" name="skills" placeholder="Masukkan skill" value="{{ current_user.skills }}">
+            </div>
+            <div class="form-group">
+                <label for="institution">Instansi</label>
+                <input type="text" id="institution" name="institution" placeholder="Masukkan instansi" value="{{ current_user.institution }}">
+            </div>
+            <div class="form-group">
+                <label for="cv">CV</label>
+                <input type="file" id="cv" name="cv" placeholder=".pdf, .doc, .docx, .jpg, .jpeg" value="{{ current_user.cv }}">
+            </div>
+            <div class="form-group">
+                <label for="address">Alamat</label>
+                <input type="text" id="address" name="address" placeholder="Masukkan alamat" value="{{ current_user.address }}">
+            </div>
+            <div class="form-group">
+                <label for="phone">No. HP</label>
+                <input type="tel" id="phone" name="phone" placeholder="Masukkan nomor HP" value="{{ current_user.phone }}">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email" value="{{ current_user.email }}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan password">
+            </div>
+            <button type="submit" class="btn-submit">Update</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/profil.js') }}"></script>
+</body>
+</html>

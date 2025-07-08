@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Listing</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/cari.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="navbar1">
+        <ul>
+          <li>
+            <span class="yellow">Aksara</span><span class="black"> Jobs</span>
+          </li>
+        </ul>
+      </header>
+
+      <div class="content1">
+        <div class="job-list">
+          {% if jobs %} {% for job in jobs %}
+          <div
+            class="job-card"
+            onclick='updateDetails(
+              {{ job.position | tojson | safe }},
+              {{ job.company_name | tojson | safe }},
+              {{ job.location | tojson | safe }},
+              {{ job.education | tojson | safe }},
+              {{ job.experience | tojson | safe }},
+              {{ job.skills | tojson | safe }}
+            )'
+          >
+            <img src="{{ url_for('static', filename='images/UIUX.jpg') }}" />
+            <div>
+              <h3>{{ job.position }}</h3>
+              <p>{{ job.company_name }}</p>
+              <p>Lokasi: {{ job.location }}</p>
+              <p>{{ job.posted_date.strftime('%d %B %Y') }}</p>
+            </div>
+          </div>
+          {% endfor %} {% else %}
+          <p>Tidak ada pekerjaan yang sesuai dengan pencarian Anda.</p>
+          {% endif %}
+        </div>
+
+        <div class="job-details">
+          <div class="tabs">
+            <button class="tab">Informasi Lowongan</button>
+            <button class="tab">Persyaratan</button>
+            <button class="tab">Skill</button>
+            <button class="tab">Tentang Perusahaan</button>
+          </div>
+          <div class="details">
+            <h3 id="job-title">
+              Klik pada daftar pekerjaan untuk melihat detail
+            </h3>
+            <p id="job-desc"></p>
+            <h4>Persyaratan</h4>
+            <ul id="requirements"></ul>
+            <h4>Skill</h4>
+            <ul id="skills"></ul>
+            <h4>Tentang Perusahaan</h4>
+            <p id="company-desc"></p>
+          </div>
+          <div class="actions">
+            <button
+              class="lamar-btn"
+              onclick="window.location.href='{{ url_for('lamar') }}'"
+            >
+              Lamar Sekarang
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/cari.js') }}"></script>
+  </body>
+</html>

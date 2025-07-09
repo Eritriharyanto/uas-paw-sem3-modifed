@@ -6,6 +6,8 @@ from __init__ import app, db, bcrypt
 from models import User
 import os
 from werkzeug.utils import secure_filename
+from werkzeug.security import generate_password_hash, check_password_hash
+
 
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'pdf', 'doc', 'docx'}
@@ -59,72 +61,55 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html')
 
-@app.route('/profil')
+@app.route("/profil")
 @login_required
 def profil():
-    # Mengirim data pengguna yang sedang login ke template profil.html
-    return render_template('profil.html')
+    return render_template("profil.html", user=current_user)
+
+@app.route("/profil/edit")
+@login_required
+def edit_profile():
+    return render_template("edit_profil.html")
+
+
+@app.route("/profil/update", methods=["POST"])
+@login_required
+def update_profile():
+    user = current_user
+    user.name = request.form['name']
+    user.experience = request.form['experience']
+    user.skills = request.form['skills']
+    user.institution = request.form['institution']
+    user.address = request.form['address']
+    user.phone = request.form['phone']
+
+    # CV Upload
+    file = request.files['cv']
+    if file and file.filename != "":
+        filename = secure_filename(file.filename)
+        filepath = os.path.join("static/uploads", filename)
+        file.save(filepath)
+        user.cv = filename
+
+    # Update password jika diisi
+    password = request.form['password']
+    if password:
+        from werkzeug.security import generate_password_hash
+        user.password = generate_password_hash(password)
+
+    db.session.commit()
+
+    # ⬅ Tambahkan baris ini untuk refresh session
+    from flask_login import login_user
+    login_user(user)
+
+    flash("Profil berhasil diperbarui!", "success")
+    return redirect(url_for("profil"))
+
 
 @app.route('/lihat-daftar-pekerjaan')
 def lihat_daftar_pekerjaan():
     return render_template('daftar_pekerjaan.html')
-
-@app.route('/update-profile', methods=['POST'])
-@login_required
-def update_profile():
-    try:
-        # Get form data
-        name = request.form.get('name')
-        experience = request.form.get('experience')
-        skills = request.form.get('skills')
-        institution = request.form.get('institution')
-        cv = request.files.get('cv')
-        address = request.form.get('address')
-        phone = request.form.get('phone')
-        email = request.form.get('email')
-        password = request.form.get('password')
-
-        # Debug: Log the form data
-        print(f"Name: {name}, Email: {email}, CV: {cv}")
-
-        # Validate required fields
-        if not name or not email:
-            print("Validation failed: Name or email is missing.")
-            return jsonify({'success': False, 'message': 'Nama dan email wajib diisi!'}), 400
-
-        # Process CV file
-        cv_filename = None
-        if cv and allowed_file(cv.filename):
-            cv_filename = secure_filename(cv.filename)
-            cv_path = os.path.join(app.config['UPLOAD_FOLDER'], cv_filename)
-            cv.save(cv_path)
-            print(f"CV file saved: {cv_filename}")
-        elif cv:
-            print("Invalid CV file.")
-            return jsonify({'success': False, 'message': 'File CV tidak valid!'}), 400
-
-        # Update user data
-        user = current_user
-        user.name = name
-        user.experience = experience
-        user.skills = skills
-        user.institution = institution
-        user.address = address
-        user.phone = phone
-        user.email = email
-        if password:
-            user.password = bcrypt.generate_password_hash(password).decode('utf-8')
-        if cv_filename:
-            user.cv_filename = cv_filename
-
-        db.session.commit()
-        print("User profile updated successfully.")
-        return jsonify({'success': True, 'message': 'Profil berhasil diperbarui!'}), 200
-
-    except Exception as e:
-        print(f"Error occurred: {str(e)}")
-        db.session.rollback()
-        return jsonify({'success': False, 'message': f'Terjadi kesalahan: {str(e)}'}), 500
 
 @app.route('/Cari')
 @login_required
@@ -158,6 +143,7 @@ def graphicdesigner():
     return render_template('graphic_designer.html')
 
 @app.route('/lamar')
+@login_required
 def lamar():
     return render_template('lamar.html')
 

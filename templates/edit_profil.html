@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profil</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/profil.css') }}"
+    />
+  </head>
+  <body>
+    <div class="profile-container">
+      <div class="profile-header">
+        <img
+          src="{{ url_for('static', filename='images/profil.jpg') }}"
+          alt="User Icon"
+          class="profile-icon"
+        />
+        <h1>Edit Profil</h1>
+      </div>
+      <form
+        class="profile-form"
+        action="{{ url_for('update_profile') }}"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <div class="form-group">
+          <label for="name">Nama</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value="{{ current_user.name }}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="experience">Pengalaman</label>
+          <input
+            type="text"
+            id="experience"
+            name="experience"
+            value="{{ current_user.experience }}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="skills">Skill</label>
+          <input
+            type="text"
+            id="skills"
+            name="skills"
+            value="{{ current_user.skills }}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="institution">Instansi</label>
+          <input
+            type="text"
+            id="institution"
+            name="institution"
+            value="{{ current_user.institution }}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="cv">CV (PDF/DOC/Gambar)</label>
+          <input
+            type="file"
+            id="cv"
+            name="cv"
+            accept=".pdf,.doc,.docx,.jpg,.jpeg"
+          />
+        </div>
+        <div class="form-group">
+          <label for="address">Alamat</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            value="{{ current_user.address }}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone">No. HP</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            value="{{ current_user.phone }}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email (tidak bisa diubah)</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value="{{ current_user.email }}"
+            readonly
+          />
+        </div>
+        <div class="form-group">
+          <label for="password"
+            >Password Baru (kosongkan jika tidak diubah)</label
+          >
+          <input type="password" id="password" name="password" />
+        </div>
+        <button type="submit" class="btn-submit">Simpan Perubahan</button>
+      </form>
+    </div>
+  </body>
+</html>

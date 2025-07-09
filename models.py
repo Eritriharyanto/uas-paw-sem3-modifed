@@ -4,7 +4,17 @@ from flask_login import UserMixin
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(200), nullable=False)  # Panjang aman untuk hash bcrypt
+    password = db.Column(db.String(200), nullable=False)
+
+    # Tambahkan kolom-kolom ini
+    name = db.Column(db.String(100))
+    experience = db.Column(db.String(200))
+    skills = db.Column(db.String(200))
+    institution = db.Column(db.String(100))
+    address = db.Column(db.String(200))
+    phone = db.Column(db.String(20))
+    cv = db.Column(db.String(200))
+
 
 
 class Job(db.Model):

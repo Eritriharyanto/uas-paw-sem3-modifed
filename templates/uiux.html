@@ -1,61 +1,196 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Daftar Lowongan Kerja</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/tema.css') }}">
+  <head>
+    <title>Daftar Lowongan Kerja</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/tema.css') }}"
+    />
+  </head>
+  <body>
+    <div class="header">UI/UX</div>
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Pekerjaan 1 -->
+        <div class="job-item">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/wk4h8sp8Uf2e0EdswFhkpW80Qf6lTNmXKCawT2klRP7YRLunA.jpg"
+          />
+          <div class="details">
+            <h3>UI/UX Designer</h3>
+            <p>PT. Teknologi Kreasi Digital</p>
+            <p>Yogyakarta</p>
+            <p class="date">24 November 2024</p>
+          </div>
+        </div>
 
-</head>
-<body>
-  <div class="header">UI/UX</div>
-  <div class="container">
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <div class="job-item">
-        <img alt="Gambar Perusahaan" src="https://storage.googleapis.com/a1aa/image/wk4h8sp8Uf2e0EdswFhkpW80Qf6lTNmXKCawT2klRP7YRLunA.jpg" />
-        <div class="details">
-          <h3>UI/UX</h3>
-          <p>PT. Teknologi Kreasi Digital</p>
-          <p>Yogyakarta</p>
-          <p class="date">24 November 2024</p>
+        <!-- Pekerjaan 2 -->
+        <div class="job-item">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/UIUX2.jpg"
+          />
+          <div class="details">
+            <h3>Product UI Designer</h3>
+            <p>CV. Kreatif Inovasi</p>
+            <p>Bandung</p>
+            <p class="date">30 November 2024</p>
+          </div>
+        </div>
+
+        <!-- Pekerjaan 3 -->
+        <div class="job-item">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/UIUX3.jpg"
+          />
+          <div class="details">
+            <h3>UI Designer</h3>
+            <p>PT. Digital Nusantara</p>
+            <p>Surabaya</p>
+            <p class="date">5 Desember 2024</p>
+          </div>
+        </div>
+
+        <!-- Pekerjaan 4 -->
+        <div class="job-item">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/UIUX4.jpg"
+          />
+          <div class="details">
+            <h3>UX Researcher</h3>
+            <p>Studio Desain Inti</p>
+            <p>Jakarta</p>
+            <p class="date">10 Desember 2024</p>
+          </div>
+        </div>
+
+        <!-- Pekerjaan 5 -->
+        <div class="job-item">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/UIUX5.jpg"
+          />
+          <div class="details">
+            <h3>UI/UX Engineer</h3>
+            <p>Techflow ID</p>
+            <p>Semarang</p>
+            <p class="date">15 Desember 2024</p>
+          </div>
+        </div>
+
+        <!-- Pekerjaan 6 -->
+        <div class="job-item">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/UIUX6.jpg"
+          />
+          <div class="details">
+            <h3>Junior UI Designer</h3>
+            <p>DesainPlus</p>
+            <p>Depok</p>
+            <p class="date">20 Desember 2024</p>
+          </div>
+        </div>
+
+        <!-- Pekerjaan 7 -->
+        <div class="job-item">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/UIUX7.jpg"
+          />
+          <div class="details">
+            <h3>UX Designer</h3>
+            <p>Inovatek Studio</p>
+            <p>Bekasi</p>
+            <p class="date">25 Desember 2024</p>
+          </div>
+        </div>
+
+        <!-- Pekerjaan 8 -->
+        <div class="job-item">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/UIUX8.jpg"
+          />
+          <div class="details">
+            <h3>Mobile UI/UX Designer</h3>
+            <p>PT. Appvision</p>
+            <p>Malang</p>
+            <p class="date">30 Desember 2024</p>
+          </div>
         </div>
       </div>
-      <!-- Tambahkan lebih banyak bagian job-item sesuai kebutuhan -->
-    </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-      <div class="company-info">
-        <img alt="Gambar Perusahaan" src="https://storage.googleapis.com/a1aa/image/wk4h8sp8Uf2e0EdswFhkpW80Qf6lTNmXKCawT2klRP7YRLunA.jpg" />
-        <h2>PT. Teknologi Kreasi Digital</h2>
-        <p>Solusi Inovatif untuk Masa Depan Digital</p>
-        <p>PT.Teknologi Kreasi Digital adalah perusahaan terkemuka yang bergerak di bidang pengembangan aplikasi web dan mobile.</p>
-        <div class="buttons">
-          <button class="lamar-btn" onclick="window.location.href='lamar'">Lamar Sekarang</button>
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="company-info">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/wk4h8sp8Uf2e0EdswFhkpW80Qf6lTNmXKCawT2klRP7YRLunA.jpg"
+          />
+          <h2>PT. Teknologi Kreasi Digital</h2>
+          <p>Solusi Inovatif untuk Masa Depan Digital</p>
+          <p>
+            PT.Teknologi Kreasi Digital adalah perusahaan terkemuka yang
+            bergerak di bidang pengembangan aplikasi web dan mobile.
+          </p>
+          <div class="buttons">
+            <button class="lamar-btn" onclick="window.location.href='lamar'">
+              Lamar Sekarang
+            </button>
+          </div>
+        </div>
+
+        <div class="job-details">
+          <h3>Informasi Lowongan</h3>
+          <p>
+            Kami sedang mencari UI/UX Designer yang berbakat dan kreatif untuk
+            bergabung dengan tim dinamis kami. Sebagai UI/UX Designer, Anda akan
+            bekerja sama dengan pengembang dan manajer produk untuk menciptakan
+            antarmuka pengguna yang menarik dan intuitif.
+          </p>
+
+          <h3>Persyaratan</h3>
+          <ul>
+            <li>
+              Pengalaman terbukti sebagai UI/UX Designer atau peran serupa
+            </li>
+            <li>Portofolio yang menunjukkan keterampilan desain</li>
+            <li>
+              Keterampilan dalam perangkat lunak desain (misalnya, Adobe XD,
+              Figma, Sketch)
+            </li>
+          </ul>
+          <p>Pendidikan: Sarjana di bidang Desain atau bidang terkait</p>
+          <p>Pengalaman: 2+ tahun di desain UI/UX</p>
+
+          <h3>Keterampilan</h3>
+          <ul>
+            <li>Wireframing dan Prototyping</li>
+            <li>Riset dan Pengujian Pengguna</li>
+            <li>Desain Web Responsif</li>
+          </ul>
+
+          <h3>Support</h3>
+          <img
+            alt="Gambar Support"
+            src="https://storage.googleapis.com/a1aa/image/Pl6hu0Z0MGLFHBqU2M1wcE4OBJnv71aUhWyyvVzphtVLax9E.jpg"
+          />
+          <img
+            alt="Gambar Support"
+            src="https://storage.googleapis.com/a1aa/image/Pl6hu0Z0MGLFHBqU2M1wcE4OBJnv71aUhWyyvVzphtVLax9E.jpg"
+          />
         </div>
       </div>
-      <div class="job-details">
-        <h3>Informasi Lowongan</h3>
-        <p>Kami sedang mencari UI/UX Designer yang berbakat dan kreatif untuk bergabung dengan tim dinamis kami. Sebagai UI/UX Designer, Anda akan bekerja sama dengan pengembang dan manajer produk untuk menciptakan antarmuka pengguna yang menarik dan intuitif.</p>
-        <h3>Persyaratan</h3>
-        <ul>
-          <li>Pengalaman terbukti sebagai UI/UX Designer atau peran serupa</li>
-          <li>Portofolio yang menunjukkan keterampilan desain</li>
-          <li>Keterampilan dalam perangkat lunak desain (misalnya, Adobe XD, Figma, Sketch)</li>
-        </ul>
-        <p>Pendidikan: Sarjana di bidang Desain atau bidang terkait</p>
-        <p>Pengalaman: 2+ tahun di desain UI/UX</p>
-        <h3>Keterampilan</h3>
-        <ul>
-          <li>Wireframing dan Prototyping</li>
-          <li>Riset dan Pengujian Pengguna</li>
-          <li>Desain Web Responsif</li>
-        </ul>
-        <h3>Support</h3>
-        <img alt="Gambar Support" src="https://storage.googleapis.com/a1aa/image/Pl6hu0Z0MGLFHBqU2M1wcE4OBJnv71aUhWyyvVzphtVLax9E.jpg" />
-        <img alt="Gambar Support" src="https://storage.googleapis.com/a1aa/image/Pl6hu0Z0MGLFHBqU2M1wcE4OBJnv71aUhWyyvVzphtVLax9E.jpg" />
-      </div>
     </div>
-  </div>
-</body>
+    <script src="{{ url_for('static', filename='js/uiux.js') }}"></script>
+  </body>
 </html>

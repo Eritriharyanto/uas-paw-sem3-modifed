@@ -19,6 +19,8 @@
         />
         <h1>Profil Saya</h1>
       </div>
+
+      <!-- Data Profil -->
       <div class="profile-details">
         <p><strong>Nama:</strong> {{ current_user.name }}</p>
         <p><strong>Pengalaman:</strong> {{ current_user.experience }}</p>
@@ -38,6 +40,45 @@
           {% else %} Tidak ada file CV {% endif %}
         </p>
         <a href="{{ url_for('edit_profile') }}" class="btn-edit">Edit Profil</a>
+      </div>
+
+      <!-- Riwayat Lamaran -->
+      <div class="lamaran-history">
+        <h2>Riwayat Lamaran Pekerjaan</h2>
+        {% if riwayat_lamaran %}
+        <ul>
+          {% for lamaran in riwayat_lamaran %}
+          <li
+            style="
+              margin-bottom: 15px;
+              border: 1px solid #ddd;
+              padding: 10px;
+              border-radius: 8px;
+              background-color: #f9f9f9;
+            "
+          >
+            <strong>{{ lamaran.nama }}</strong> - {{ lamaran.instansi }}<br />
+            <small>Email: {{ lamaran.email }} | No HP: {{ lamaran.nohp }}</small
+            ><br />
+            <small>Tanggal: {{ lamaran.tanggal.strftime('%d %B %Y') }}</small
+            ><br />
+            <small>Pengalaman: {{ lamaran.pengalaman or 'Tidak diisi' }}</small
+            ><br />
+            <small>
+              CV: {% if lamaran.file_cv %}
+              <a
+                href="{{ url_for('static', filename='uploads/' + lamaran.file_cv) }}"
+                target="_blank"
+                >Lihat CV</a
+              >
+              {% else %} Tidak ada CV {% endif %}
+            </small>
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p>Kamu belum pernah mengirim lamaran.</p>
+        {% endif %}
       </div>
     </div>
   </body>

@@ -6,7 +6,7 @@ from __init__ import app, db, bcrypt
 from models import User
 import os
 from werkzeug.utils import secure_filename
-from werkzeug.security import generate_password_hash, check_password_hash
+
 
 
 UPLOAD_FOLDER = 'uploads'
@@ -33,7 +33,8 @@ def login():
         email = request.form['email']
         password = request.form['password']
         user = User.query.filter_by(email=email).first()
-        if user and bcrypt.check_password_hash(user.password, password): 
+        if user and bcrypt.check_password_hash(user.password.encode('utf-8'), password.encode('utf-8')):
+
             login_user(user)
             next_page = request.args.get('next')
             return redirect(next_page) if next_page else redirect(url_for('home'))
@@ -64,7 +65,10 @@ def register():
 @app.route("/profil")
 @login_required
 def profil():
-    return render_template("profil.html", user=current_user)
+    from models import Lamaran
+    riwayat_lamaran = Lamaran.query.filter_by(user_id=current_user.id).order_by(Lamaran.tanggal.desc()).all()
+    return render_template("profil.html", user=current_user, riwayat_lamaran=riwayat_lamaran)
+
 
 @app.route("/profil/edit")
 @login_required
@@ -95,7 +99,8 @@ def update_profile():
     password = request.form['password']
     if password:
         from werkzeug.security import generate_password_hash
-        user.password = generate_password_hash(password)
+        user.password = bcrypt.generate_password_hash(password).decode('utf-8')
+
 
     db.session.commit()
 
@@ -148,11 +153,39 @@ def lamar():
     return render_template('lamar.html')
 
 @app.route('/thx', methods=['GET', 'POST'])
+@login_required
 def thx():
     if request.method == 'POST':
-        # Proses data form jika diperlukan
-        # Misalnya simpan data ke database atau lakukan proses lain
-        return render_template('thx.html')  # Setelah form dikirim, tampilkan halaman terima kasih
+        from models import Lamaran
+
+        nama = request.form['nama']
+        instansi = request.form['instasi']
+        email = request.form['email']
+        pengalaman = request.form['pengalaman']
+        nohp = request.form['nohp']
+        file = request.files['uploadcv']
+
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            file.save(file_path)
+
+            lamaran = Lamaran(
+                nama=nama,
+                instansi=instansi,
+                email=email,
+                pengalaman=pengalaman,
+                nohp=nohp,
+                file_cv=filename,
+                user_id=current_user.id
+            )
+            db.session.add(lamaran)
+            db.session.commit()
+
+            flash("Lamaran berhasil dikirim!", "success")
+            return redirect(url_for('thx'))
+        else:
+            flash("Format file tidak diizinkan.", "danger")
     return render_template('thx.html')
 
 @app.route('/logout')

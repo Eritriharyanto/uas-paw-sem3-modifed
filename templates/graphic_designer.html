@@ -1,60 +1,208 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Daftar Lowongan Kerja</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/tema.css') }}">
-</head>
-<body>
-  <div class="header">Graphic Designer</div>
-  <div class="container">
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <div class="job-item">
-        <img src="{{ url_for('static', filename='images/graphic_designer.jpg') }}" alt="User Icon" class="profile-icon">
-        <div class="details">
-          <h3>Graphic Designer</h3>
-          <p>PT. Basing Abadi</p>
-          <p>Gaji: 7 juta per bulan</p>
-          <p class="date">24 November 2024</p>
+  <head>
+    <title>Daftar Lowongan Kerja</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/tema.css') }}"
+    />
+    <style>
+      .active {
+        background-color: #eee;
+      }
+      .profile-icon {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      .job-item {
+        cursor: pointer;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        gap: 10px;
+      }
+      .details {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Graphic Designer</div>
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="job-item">
+          <img
+            src="{{ url_for('static', filename='images/graphic_designer.jpg') }}"
+            alt="Graphic Designer"
+            class="profile-icon"
+          />
+          <div class="details">
+            <h3>Graphic Designer</h3>
+            <p>PT. Basing Abadi</p>
+            <p>Gaji: 7 juta per bulan</p>
+            <p class="date">24 November 2024</p>
+          </div>
         </div>
-      </div>
-      <!-- Tambahkan lebih banyak bagian job-item sesuai kebutuhan -->
-    </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-      <div class="company-info">
-        <img alt="Gambar Perusahaan" src="https://storage.googleapis.com/a1aa/image/wk4h8sp8Uf2e0EdswFhkpW80Qf6lTNmXKCawT2klRP7YRLunA.jpg" />
-        <h2>PT. Basing Abadi</h2>
-        <p>PT. Basing Abadi adalah perusahaan desain grafis internasional yang berfokus pada proyek-proyek kreatif untuk berbagai klien global.</p>
-        <p>Kami menyediakan solusi desain inovatif yang memenuhi standar internasional dan memiliki dampak besar di industri kreatif.</p>
-        <div class="buttons">
-          <button class="lamar-btn" onclick="window.location.href='lamar'">Lamar Sekarang</button>
+        <div class="job-item">
+          <img
+            src="{{ url_for('static', filename='images/ui_designer.jpg') }}"
+            alt="UI Designer"
+            class="profile-icon"
+          />
+          <div class="details">
+            <h3>UI Designer</h3>
+            <p>CV. Visual Kreatif</p>
+            <p>Gaji: 6.5 juta per bulan</p>
+            <p class="date">25 November 2024</p>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <img
+            src="{{ url_for('static', filename='images/seo_specialist.jpg') }}"
+            alt="SEO Specialist"
+            class="profile-icon"
+          />
+          <div class="details">
+            <h3>SEO Specialist</h3>
+            <p>PT. Optimasi Digital</p>
+            <p>Gaji: 6 juta per bulan</p>
+            <p class="date">26 November 2024</p>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <img
+            src="{{ url_for('static', filename='images/content_creator.jpg') }}"
+            alt="Content Creator"
+            class="profile-icon"
+          />
+          <div class="details">
+            <h3>Content Creator</h3>
+            <p>Studio Kreativa</p>
+            <p>Gaji: 5 juta per bulan</p>
+            <p class="date">27 November 2024</p>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <img
+            src="{{ url_for('static', filename='images/social_media_manager.jpg') }}"
+            alt="Social Media Manager"
+            class="profile-icon"
+          />
+          <div class="details">
+            <h3>Social Media Manager</h3>
+            <p>PT. Mediatech Nusantara</p>
+            <p>Gaji: 6 juta per bulan</p>
+            <p class="date">28 November 2024</p>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <img
+            src="{{ url_for('static', filename='images/email_marketing.jpg') }}"
+            alt="Email Marketing"
+            class="profile-icon"
+          />
+          <div class="details">
+            <h3>Email Marketing Specialist</h3>
+            <p>SurelPro</p>
+            <p>Gaji: 5.5 juta per bulan</p>
+            <p class="date">29 November 2024</p>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <img
+            src="{{ url_for('static', filename='images/ux_designer.jpg') }}"
+            alt="UX Designer"
+            class="profile-icon"
+          />
+          <div class="details">
+            <h3>UX Designer</h3>
+            <p>Desain Inti Studio</p>
+            <p>Gaji: 6.5 juta per bulan</p>
+            <p class="date">30 November 2024</p>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <img
+            src="{{ url_for('static', filename='images/marketing_analyst.jpg') }}"
+            alt="Marketing Analyst"
+            class="profile-icon"
+          />
+          <div class="details">
+            <h3>Marketing Analyst</h3>
+            <p>PT. Jaya Promosi</p>
+            <p>Gaji: 5.8 juta per bulan</p>
+            <p class="date">1 Desember 2024</p>
+          </div>
         </div>
       </div>
-      <div class="job-details">
-        <h3>Informasi Lowongan</h3>
-        <p>Sisa tiga slot kosong untuk posisi ini</p>
-        <h3>Persyaratan</h3>
-        <ul>
-          <li>Minimal 25 tahun</li>
-          <li>Lulusan SMK di bidang Desain Grafis atau yang relevan</li>
-          <li>Memiliki keterampilan desain grafis yang baik</li>
-        </ul>
-        <p>Pendidikan: SMK/D3/S1 Desain Grafis atau sejenis</p>
-        <p>Pengalaman: Minimal 1 tahun di bidang desain grafis</p>
-        <h3>Keterampilan</h3>
-        <ul>
-          <li>Penguasaan Canva atau perangkat lunak desain lainnya</li>
-          <li>Manajemen waktu yang baik dan dapat bekerja dengan deadline ketat</li>
-          <li>Pemahaman dasar-dasar desain grafis dan prinsip desain</li>
-        </ul>
-        <h3>Support</h3>
-        <img alt="Gambar Support" src="https://storage.googleapis.com/a1aa/image/Pl6hu0Z0MGLFHBqU2M1wcE4OBJnv71aUhWyyvVzphtVLax9E.jpg" />
-        <img alt="Gambar Support" src="https://storage.googleapis.com/a1aa/image/Pl6hu0Z0MGLFHBqU2M1wcE4OBJnv71aUhWyyvVzphtVLax9E.jpg" />
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="company-info">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/wk4h8sp8Uf2e0EdswFhkpW80Qf6lTNmXKCawT2klRP7YRLunA.jpg"
+          />
+          <h2>PT. Basing Abadi</h2>
+          <p>
+            PT. Basing Abadi adalah perusahaan desain grafis internasional yang
+            berfokus pada proyek-proyek kreatif untuk berbagai klien global.
+          </p>
+          <p>
+            Kami menyediakan solusi desain inovatif yang memenuhi standar
+            internasional dan memiliki dampak besar di industri kreatif.
+          </p>
+          <div class="buttons">
+            <button class="lamar-btn" onclick="window.location.href='lamar'">
+              Lamar Sekarang
+            </button>
+          </div>
+        </div>
+        <div class="job-details">
+          <h3>Informasi Lowongan</h3>
+          <p>Sisa tiga slot kosong untuk posisi ini</p>
+          <h3>Persyaratan</h3>
+          <ul>
+            <li>Minimal 25 tahun</li>
+            <li>Lulusan SMK di bidang Desain Grafis atau yang relevan</li>
+            <li>Memiliki keterampilan desain grafis yang baik</li>
+          </ul>
+          <p>Pendidikan: SMK/D3/S1 Desain Grafis atau sejenis</p>
+          <p>Pengalaman: Minimal 1 tahun di bidang desain grafis</p>
+          <h3>Keterampilan</h3>
+          <ul>
+            <li>Penguasaan Canva atau perangkat lunak desain lainnya</li>
+            <li>
+              Manajemen waktu yang baik dan dapat bekerja dengan deadline ketat
+            </li>
+            <li>Pemahaman dasar-dasar desain grafis dan prinsip desain</li>
+          </ul>
+          <h3>Support</h3>
+          <img
+            alt="Gambar Support"
+            src="https://storage.googleapis.com/a1aa/image/Pl6hu0Z0MGLFHBqU2M1wcE4OBJnv71aUhWyyvVzphtVLax9E.jpg"
+          />
+          <img
+            alt="Gambar Support"
+            src="https://storage.googleapis.com/a1aa/image/Pl6hu0Z0MGLFHBqU2M1wcE4OBJnv71aUhWyyvVzphtVLax9E.jpg"
+          />
+        </div>
       </div>
     </div>
-  </div>
-</body>
+    <script src="{{ url_for('static', filename='js/grapic_desainer.js') }}"></script>
+  </body>
 </html>

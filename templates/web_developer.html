@@ -1,60 +1,202 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Daftar Lowongan Kerja</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/tema.css') }}">
-</head>
-<body>
-  <div class="header">Web Developer</div>
-  <div class="container">
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <div class="job-item">
-        <img alt="Gambar Perusahaan" src="https://storage.googleapis.com/a1aa/image/wk4h8sp8Uf2e0EdswFhkpW80Qf6lTNmXKCawT2klRP7YRLunA.jpg" />
-        <div class="details">
-          <h3>Web Developer</h3>
-          <p>PT. Tapops</p>
-          <p>Gaji: 5 juta per bulan</p>
-          <p class="date">24 November 2024</p>
+  <head>
+    <title>Daftar Lowongan Kerja</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/tema.css') }}"
+    />
+    <style>
+      .active {
+        background-color: #eee;
+      }
+      .profile-icon {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      .job-item {
+        cursor: pointer;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        gap: 10px;
+      }
+      .details {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Daftar Lowongan Kerja</div>
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="job-item">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/wk4h8sp8Uf2e0EdswFhkpW80Qf6lTNmXKCawT2klRP7YRLunA.jpg"
+          />
+          <div class="details">
+            <h3>Web Developer</h3>
+            <p>PT. Tapops</p>
+            <p>Gaji: 5 juta per bulan</p>
+            <p class="date">24 November 2024</p>
+          </div>
         </div>
-      </div>
-      <!-- Tambahkan lebih banyak bagian job-item sesuai kebutuhan -->
-    </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-      <div class="company-info">
-        <img alt="Gambar Perusahaan" src="https://storage.googleapis.com/a1aa/image/wk4h8sp8Uf2e0EdswFhkpW80Qf6lTNmXKCawT2klRP7YRLunA.jpg" />
-        <h2>PT. Tapops</h2>
-        <p>PT. Tapops adalah perusahaan yang bergerak di bidang pengembangan web dan solusi teknologi informasi untuk berbagai jenis bisnis.</p>
-        <p>Kami berkomitmen untuk menyediakan solusi digital yang inovatif dan efektif untuk memenuhi kebutuhan bisnis klien kami.</p>
-        <div class="buttons">
-          <button class="lamar-btn" onclick="window.location.href='lamar'">Lamar Sekarang</button>
+        <div class="job-item">
+          <img
+            alt="Digital Marketing"
+            src="https://storage.googleapis.com/a1aa/image/digitalmarketing1.jpg"
+          />
+          <div class="details">
+            <h3>Digital Marketing Specialist</h3>
+            <p>PT. Kreatif Digital Nusantara</p>
+            <p>Gaji: 6 juta per bulan</p>
+            <p class="date">25 November 2024</p>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <img
+            alt="UI Designer"
+            src="https://storage.googleapis.com/a1aa/image/UIUX2.jpg"
+          />
+          <div class="details">
+            <h3>UI Designer</h3>
+            <p>CV. Kreatif Inovasi</p>
+            <p>Gaji: 6.5 juta per bulan</p>
+            <p class="date">26 November 2024</p>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <img
+            alt="SEO Specialist"
+            src="https://storage.googleapis.com/a1aa/image/seo-specialist.jpg"
+          />
+          <div class="details">
+            <h3>SEO Specialist</h3>
+            <p>PT. Optimasi Digital</p>
+            <p>Gaji: 7 juta per bulan</p>
+            <p class="date">27 November 2024</p>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <img
+            alt="Content Creator"
+            src="https://storage.googleapis.com/a1aa/image/content-creator.jpg"
+          />
+          <div class="details">
+            <h3>Content Creator</h3>
+            <p>Inovatek Studio</p>
+            <p>Gaji: 4.5 juta per bulan</p>
+            <p class="date">28 November 2024</p>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <img
+            alt="Social Media Manager"
+            src="https://storage.googleapis.com/a1aa/image/social-media-manager.jpg"
+          />
+          <div class="details">
+            <h3>Social Media Manager</h3>
+            <p>Media Kreatif ID</p>
+            <p>Gaji: 6 juta per bulan</p>
+            <p class="date">29 November 2024</p>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <img
+            alt="Email Marketing"
+            src="https://storage.googleapis.com/a1aa/image/email-marketing.jpg"
+          />
+          <div class="details">
+            <h3>Email Marketing Specialist</h3>
+            <p>SurelPro</p>
+            <p>Gaji: 5.5 juta per bulan</p>
+            <p class="date">30 November 2024</p>
+          </div>
+        </div>
+
+        <div class="job-item">
+          <img
+            alt="UX Designer"
+            src="https://storage.googleapis.com/a1aa/image/UIUX7.jpg"
+          />
+          <div class="details">
+            <h3>UX Designer</h3>
+            <p>Studio Desain Inti</p>
+            <p>Gaji: 6 juta per bulan</p>
+            <p class="date">1 Desember 2024</p>
+          </div>
         </div>
       </div>
-      <div class="job-details">
-        <h3>Informasi Lowongan</h3>
-        <p>Baru dibuka hari ini, berlaku sampai 30 November 2024</p>
-        <h3>Persyaratan</h3>
-        <ul>
-          <li>Minimal 25 tahun</li>
-          <li>Lulusan SMK di bidang Teknik Komputer atau yang relevan</li>
-          <li>Memiliki pengetahuan dasar tentang pemrograman web</li>
-        </ul>
-        <p>Pendidikan: SMK/D3/S1 Teknik Informatika atau sejenis</p>
-        <p>Pengalaman: Minimal 1 tahun di bidang pengembangan web</p>
-        <h3>Keterampilan</h3>
-        <ul>
-          <li>Penguasaan bahasa pemrograman seperti HTML, CSS, JavaScript</li>
-          <li>Manajemen waktu yang baik dan dapat bekerja dengan deadline ketat</li>
-          <li>Pemahaman dasar-dasar pengembangan web dan framework terkait</li>
-        </ul>
-        <h3>Support</h3>
-        <img alt="Gambar Support" src="https://storage.googleapis.com/a1aa/image/Pl6hu0Z0MGLFHBqU2M1wcE4OBJnv71aUhWyyvVzphtVLax9E.jpg" />
-        <img alt="Gambar Support" src="https://storage.googleapis.com/a1aa/image/Pl6hu0Z0MGLFHBqU2M1wcE4OBJnv71aUhWyyvVzphtVLax9E.jpg" />
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="company-info">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/wk4h8sp8Uf2e0EdswFhkpW80Qf6lTNmXKCawT2klRP7YRLunA.jpg"
+          />
+          <h2>PT. Tapops</h2>
+          <p>
+            PT. Tapops adalah perusahaan yang bergerak di bidang pengembangan
+            web dan solusi teknologi informasi untuk berbagai jenis bisnis.
+          </p>
+          <p>
+            Kami berkomitmen untuk menyediakan solusi digital yang inovatif dan
+            efektif untuk memenuhi kebutuhan bisnis klien kami.
+          </p>
+          <div class="buttons">
+            <button class="lamar-btn" onclick="window.location.href='lamar'">
+              Lamar Sekarang
+            </button>
+          </div>
+        </div>
+        <div class="job-details">
+          <h3>Informasi Lowongan</h3>
+          <p>Baru dibuka hari ini, berlaku sampai 30 November 2024</p>
+          <h3>Persyaratan</h3>
+          <ul>
+            <li>Minimal 25 tahun</li>
+            <li>Lulusan SMK di bidang Teknik Komputer atau yang relevan</li>
+            <li>Memiliki pengetahuan dasar tentang pemrograman web</li>
+          </ul>
+          <p>Pendidikan: SMK/D3/S1 Teknik Informatika atau sejenis</p>
+          <p>Pengalaman: Minimal 1 tahun di bidang pengembangan web</p>
+          <h3>Keterampilan</h3>
+          <ul>
+            <li>Penguasaan bahasa pemrograman seperti HTML, CSS, JavaScript</li>
+            <li>
+              Manajemen waktu yang baik dan dapat bekerja dengan deadline ketat
+            </li>
+            <li>
+              Pemahaman dasar-dasar pengembangan web dan framework terkait
+            </li>
+          </ul>
+          <h3>Support</h3>
+          <img
+            alt="Gambar Support"
+            src="https://storage.googleapis.com/a1aa/image/Pl6hu0Z0MGLFHBqU2M1wcE4OBJnv71aUhWyyvVzphtVLax9E.jpg"
+          />
+          <img
+            alt="Gambar Support"
+            src="https://storage.googleapis.com/a1aa/image/Pl6hu0Z0MGLFHBqU2M1wcE4OBJnv71aUhWyyvVzphtVLax9E.jpg"
+          />
+        </div>
       </div>
     </div>
-  </div>
-</body>
+    <script src="{{ url_for('static', filename='js/web_developer.js') }}"></script>
+  </body>
 </html>

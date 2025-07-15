@@ -1,60 +1,224 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Daftar Lowongan Kerja</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/tema.css') }}">
-</head>
-<body>
-  <div class="header">Digital Marketing</div>
-  <div class="container">
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <div class="job-item">
-        <img alt="Gambar Perusahaan" src="https://storage.googleapis.com/a1aa/image/wk4h8sp8Uf2e0EdswFhkpW80Qf6lTNmXKCawT2klRP7YRLunA.jpg" />
-        <div class="details">
-          <h3>Digital Marketing Specialist</h3>
-          <p>PT. Global Nasional</p>
-          <p>Gaji: 100 juta per tahun</p>
-          <p class="date">24 November 2024</p>
+  <head>
+    <title>Daftar Lowongan Kerja</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/tema.css') }}"
+    />
+    <style>
+      .active {
+        background-color: #eee;
+      }
+      .profile-icon {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      .job-item {
+        cursor: pointer;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        gap: 10px;
+      }
+      .details {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Digital Marketing</div>
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Pekerjaan 1 -->
+        <div class="job-item">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/wk4h8sp8Uf2e0EdswFhkpW80Qf6lTNmXKCawT2klRP7YRLunA.jpg"
+          />
+          <div class="details">
+            <h3>Digital Marketing Specialist</h3>
+            <p>PT. Teknologi Digital Marketing</p>
+            <p>Yogyakarta</p>
+            <p class="date">24 November 2024</p>
+          </div>
         </div>
-      </div>
-      <!-- Tambahkan lebih banyak bagian job-item sesuai kebutuhan -->
-    </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-      <div class="company-info">
-        <img alt="Gambar Perusahaan" src="https://storage.googleapis.com/a1aa/image/wk4h8sp8Uf2e0EdswFhkpW80Qf6lTNmXKCawT2klRP7YRLunA.jpg" />
-        <h2>PT. Global Nasional</h2>
-        <p>Perusahaan yang bergerak di bidang energi, khususnya pengolahan dan distribusi minyak bumi dan gas.</p>
-        <p>PT. Global Nasional adalah perusahaan energi terkemuka yang memiliki komitmen untuk menyediakan solusi energi yang inovatif dan berkelanjutan untuk kebutuhan global.</p>
-        <div class="buttons">
-          <button class="lamar-btn" onclick="window.location.href='lamar'">Lamar Sekarang</button>
+        <!-- Pekerjaan 2 -->
+        <div class="job-item">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/UIUX2.jpg"
+          />
+          <div class="details">
+            <h3>SEO Specialist (Search Engine Optimization)</h3>
+            <p>CV. Search Engine Optimization</p>
+            <p>Bandung</p>
+            <p class="date">30 November 2024</p>
+          </div>
+        </div>
+
+        <!-- Pekerjaan 3 -->
+        <div class="job-item">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/UIUX3.jpg"
+          />
+          <div class="details">
+            <h3>Social Media Manager</h3>
+            <p>PT. Digital Nusantara</p>
+            <p>Surabaya</p>
+            <p class="date">5 Desember 2024</p>
+          </div>
+        </div>
+
+        <!-- Pekerjaan 4 -->
+        <div class="job-item">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/UIUX4.jpg"
+          />
+          <div class="details">
+            <h3>Content Marketing Specialist</h3>
+            <p>Studio Digital Marketing</p>
+            <p>Jakarta</p>
+            <p class="date">10 Desember 2024</p>
+          </div>
+        </div>
+
+        <!-- Pekerjaan 5 -->
+        <div class="job-item">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/UIUX5.jpg"
+          />
+          <div class="details">
+            <h3>Email Marketing Specialist</h3>
+            <p>Email Specialist</p>
+            <p>Semarang</p>
+            <p class="date">15 Desember 2024</p>
+          </div>
+        </div>
+
+        <!-- Pekerjaan 6 -->
+        <div class="job-item">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/UIUX6.jpg"
+          />
+          <div class="details">
+            <h3>PPC Specialist (Pay-Per-Click)</h3>
+            <p>Specialist Marketing</p>
+            <p>Depok</p>
+            <p class="date">20 Desember 2024</p>
+          </div>
+        </div>
+
+        <!-- Pekerjaan 7 -->
+        <div class="job-item">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/UIUX7.jpg"
+          />
+          <div class="details">
+            <h3>Affiliate Marketing Manager</h3>
+            <p>Affiliate Studio</p>
+            <p>Bekasi</p>
+            <p class="date">25 Desember 2024</p>
+          </div>
+        </div>
+
+        <!-- Pekerjaan 8 -->
+        <div class="job-item">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/UIUX8.jpg"
+          />
+          <div class="details">
+            <h3>Marketing Data Analyst</h3>
+            <p>PT. Jaya</p>
+            <p>Malang</p>
+            <p class="date">30 Desember 2024</p>
+          </div>
         </div>
       </div>
-      <div class="job-details">
-        <h3>Informasi Lowongan</h3>
-        <p>Berlaku sampai minggu depan</p>
-        <h3>Persyaratan</h3>
-        <ul>
-          <li>Minimal 18 tahun</li>
-          <li>Lulusan minimal SMA/SMK</li>
-          <li>Memiliki keterampilan komunikasi yang baik</li>
-        </ul>
-        <p>Pendidikan: D3/S1 di bidang pemasaran, komunikasi, atau yang relevan</p>
-        <p>Pengalaman: Minimal 2 tahun di bidang digital marketing</p>
-        <h3>Keterampilan</h3>
-        <ul>
-          <li>Pengelolaan Kampanye Iklan Digital</li>
-          <li>Analisis Data dan SEO</li>
-          <li>Desain Konten dan Media Sosial</li>
-        </ul>
-        <h3>Support</h3>
-        <img alt="Gambar Support" src="https://storage.googleapis.com/a1aa/image/Pl6hu0Z0MGLFHBqU2M1wcE4OBJnv71aUhWyyvVzphtVLax9E.jpg" />
-        <img alt="Gambar Support" src="https://storage.googleapis.com/a1aa/image/Pl6hu0Z0MGLFHBqU2M1wcE4OBJnv71aUhWyyvVzphtVLax9E.jpg" />
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="company-info">
+          <img
+            alt="Gambar Perusahaan"
+            src="https://storage.googleapis.com/a1aa/image/wk4h8sp8Uf2e0EdswFhkpW80Qf6lTNmXKCawT2klRP7YRLunA.jpg"
+          />
+          <h2>PT. Teknologi Kreasi Digital</h2>
+          <p>Solusi Inovatif untuk Masa Depan Digital</p>
+          <p>
+            PT.Teknologi Kreasi Digital adalah perusahaan terkemuka yang
+            bergerak di bidang pengembangan aplikasi web, mobile, dan strategi
+            pemasaran digital.
+          </p>
+          <div class="buttons">
+            <button class="lamar-btn" onclick="window.location.href='lamar'">
+              Lamar Sekarang
+            </button>
+          </div>
+        </div>
+
+        <div class="job-details">
+          <h3>Informasi Lowongan</h3>
+          <p>
+            Kami sedang mencari Digital Marketing Specialist yang kreatif dan
+            berorientasi pada data untuk bergabung dengan tim kami. Anda akan
+            bertanggung jawab untuk merancang, mengimplementasikan, dan
+            mengoptimalkan kampanye pemasaran digital untuk meningkatkan
+            visibilitas dan konversi brand kami.
+          </p>
+
+          <h3>Persyaratan</h3>
+          <ul>
+            <li>
+              Pengalaman terbukti sebagai Digital Marketing Specialist atau
+              posisi serupa
+            </li>
+            <li>Pengetahuan kuat tentang SEO, Google Ads, dan Meta Ads</li>
+            <li>
+              Familiar dengan tools seperti Google Analytics, Search Console,
+              dan platform email marketing
+            </li>
+          </ul>
+          <p>
+            Pendidikan: Sarjana di bidang Pemasaran, Komunikasi, atau bidang
+            terkait
+          </p>
+          <p>Pengalaman: Minimal 2 tahun dalam pemasaran digital</p>
+
+          <h3>Keterampilan</h3>
+          <ul>
+            <li>SEO dan SEM</li>
+            <li>Manajemen Sosial Media</li>
+            <li>Copywriting dan Content Marketing</li>
+            <li>Analisis Data dan Optimasi Kampanye</li>
+          </ul>
+
+          <h3>Support</h3>
+          <img
+            alt="Gambar Support"
+            src="https://storage.googleapis.com/a1aa/image/Pl6hu0Z0MGLFHBqU2M1wcE4OBJnv71aUhWyyvVzphtVLax9E.jpg"
+          />
+          <img
+            alt="Gambar Support"
+            src="https://storage.googleapis.com/a1aa/image/Pl6hu0Z0MGLFHBqU2M1wcE4OBJnv71aUhWyyvVzphtVLax9E.jpg"
+          />
+        </div>
       </div>
     </div>
-  </div>
-</body>
+    <script src="{{ url_for('static', filename='js/digital_marketing.js') }}"></script>
+  </body>
 </html>

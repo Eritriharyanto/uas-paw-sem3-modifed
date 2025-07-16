@@ -1,0 +1,115 @@
+/* Reset & Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  padding: 20px;
+}
+
+/* Container utama */
+.profile-container {
+  max-width: 800px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+/* Header Profil */
+.profile-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .profile-icon {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Form Profil */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"],
+.form-group input[type="file"] {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #6c63ff;
+}
+
+/* Tombol Submit */
+.btn-submit {
+  padding: 12px 20px;
+  background-color: #6c63ff;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+  align-self: flex-start;
+}
+
+.btn-submit:hover {
+  background-color: #524ed4;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  .profile-container {
+    padding: 20px;
+  }
+
+  .form-group input,
+  .btn-submit {
+    width: 100%;
+  }
+
+  .btn-submit {
+    align-self: stretch;
+    text-align: center;
+  }
+}

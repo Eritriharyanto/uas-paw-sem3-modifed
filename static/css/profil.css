@@ -1,123 +1,104 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #e0f7fa; /* Light aqua background */
-    color: #01579b; /* Dark blue text */
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #b2ebf2, #80deea, #4dd0e1); /* Sea blue gradient */
-    background-size: 300% 300%;
-    animation: gradientBG 10s ease infinite;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  padding: 20px;
 }
 
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
+/* Container utama */
 .profile-container {
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background: rgba(224, 247, 250, 0.8); /* Semi-transparent aqua background */
-    border: 1px solid rgba(0, 137, 123, 0.5);
-    border-radius: 15px;
-    box-shadow: 0 4px 30px rgba(0, 137, 123, 0.3);
-    max-width: 600px;
-    margin: 40px auto;
+  max-width: 800px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
 }
 
+/* Header profil */
 .profile-header {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .profile-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: #80deea; /* Aqua icon background */
-    display: block;
-    margin: 0 auto 10px;
-    border: 2px solid #00acc1; /* Aqua border */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 
-.profile-header h1 {
-    font-size: 1.8rem;
-    margin: 0;
-    color: #006064; /* Deep teal text */
-    text-shadow: 1px 1px 2px rgba(0, 96, 100, 0.6);
+/* Detail profil */
+.profile-details p {
+  margin-bottom: 12px;
+  font-size: 16px;
 }
 
-.profile-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.btn-edit {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 18px;
+  background-color: #6c63ff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
+.btn-edit:hover {
+  background-color: #524ed4;
 }
 
-.form-group label {
-    font-size: 1rem;
-    margin-bottom: 5px;
-    color: #00838f; /* Aqua label */
+/* Riwayat lamaran */
+.lamaran-history {
+  margin-top: 40px;
 }
 
-.form-group input {
-    padding: 10px;
-    font-size: 14px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    background: rgba(224, 247, 250, 0.5); /* Light aqua input field */
-    color: #01579b; /* Dark blue text inside input */
-    box-shadow: inset 0 2px 4px rgba(0, 137, 123, 0.3);
+.lamaran-history h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
 }
 
-.form-group input:focus {
-    background: rgba(224, 247, 250, 0.8);
-    box-shadow: 0 0 8px rgba(0, 137, 123, 0.5);
+.lamaran-history ul {
+  list-style: none;
 }
 
-.btn-submit {
-    padding: 10px;
-    font-size: 16px;
-    color: #fff;
-    background: linear-gradient(135deg, #00acc1, #00838f); /* Aqua button gradient */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.lamaran-history li {
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 15px;
+}
+
+.lamaran-history small {
+  display: block;
+  color: #555;
+  margin-top: 4px;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  .profile-container {
+    padding: 20px;
+  }
+
+  .profile-icon {
+    width: 90px;
+    height: 90px;
+  }
+
+  .btn-edit {
+    width: 100%;
     text-align: center;
-    transition: all 0.3s ease;
-}
-
-.btn-submit:hover {
-    background: linear-gradient(135deg, #00838f, #00acc1); /* Darker on hover */
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 137, 123, 0.3);
-}
-
-@media (max-width: 768px) {
-    .profile-container {
-        padding: 15px;
-    }
-
-    .btn-submit {
-        font-size: 14px;
-    }
+  }
 }

@@ -18,6 +18,8 @@ class User(db.Model, UserMixin):
     address = db.Column(db.String(200))
     phone = db.Column(db.String(20))
     cv = db.Column(db.String(200))
+    profile_picture = db.Column(db.String(120), nullable=True)
+
 
     # Relasi ke lamaran
     lamarans = db.relationship('Lamaran', backref='pelamar', lazy=True)

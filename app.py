@@ -87,24 +87,31 @@ def update_profile():
     user.address = request.form['address']
     user.phone = request.form['phone']
 
-    # CV Upload
-    file = request.files['cv']
+    # Upload CV
+    file = request.files.get('cv')
     if file and file.filename != "":
         filename = secure_filename(file.filename)
         filepath = os.path.join("static/uploads", filename)
         file.save(filepath)
         user.cv = filename
 
+    # ✅ Upload Foto Profil
+    profile_pic = request.files.get('profile_picture')
+    if profile_pic and profile_pic.filename != "":
+        pic_filename = secure_filename(profile_pic.filename)
+        pic_path = os.path.join("static/images", pic_filename)
+        profile_pic.save(pic_path)
+        user.profile_picture = pic_filename
+
     # Update password jika diisi
-    password = request.form['password']
+    password = request.form.get('password')
     if password:
         from werkzeug.security import generate_password_hash
         user.password = bcrypt.generate_password_hash(password).decode('utf-8')
 
-
     db.session.commit()
 
-    # ⬅ Tambahkan baris ini untuk refresh session
+    # ⬅ Refresh session biar data baru langsung muncul
     from flask_login import login_user
     login_user(user)
 

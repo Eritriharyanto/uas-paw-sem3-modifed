@@ -10,6 +10,27 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/tema.css') }}"
     />
+    <style>
+      .active {
+        background-color: #eee;
+      }
+      .profile-icon {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      .job-item {
+        cursor: pointer;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        gap: 10px;
+      }
+      .details {
+        flex: 1;
+      }
+    </style>
   </head>
   <body>
     <div class="header">UI/UX</div>

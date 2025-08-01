@@ -15,11 +15,25 @@
       <div class="logo"><span class="highlight">Aksara</span> Jobs</div>
       <div class="auth-buttons">
         {% if current_user.is_authenticated %}
-        <button onclick="window.location.href='{{ url_for('profil') }}'">
-          Profil
+        <button
+          onclick="location.href='/profil'"
+          style="border: none; background: transparent"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+            alt="Profil"
+            style="
+              width: 32px;
+              height: 32px;
+              border-radius: 50%;
+              object-fit: cover;
+            "
+          />
         </button>
+
         <button onclick="window.location.href='{{ url_for('logout') }}'">
           Logout
+          
         </button>
         {% else %}
         <button onclick="window.location.href='{{ url_for('login') }}'">
@@ -130,7 +144,7 @@
         margin-left: 10px;
       }
     </style>
-    
+
     <!-- Tambahkan sebelum </body> -->
     <footer class="footer">
       <div class="footer-container">

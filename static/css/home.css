@@ -272,3 +272,58 @@ body {
 .cta-button:hover {
   background-color: #15c70f;
 }
+
+/* Navbar utama */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f3eaea; /* warna background navbar */
+}
+
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.highlight {
+  color: #f5a623; /* warna "Aksara" */
+}
+
+/* Bagian kanan (profil & logout) */
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Tombol gambar profil */
+.auth-buttons button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Gambar profil */
+.auth-buttons img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Tombol logout/login */
+.auth-buttons button:not(:has(img)) {
+  background-color: #ffc107;
+  color: black;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.auth-buttons button:not(:has(img)):hover {
+  background-color: #e0a800;
+}

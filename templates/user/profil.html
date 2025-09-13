@@ -38,13 +38,17 @@
           <strong>CV:</strong>
           {% if current_user.cv %}
           <a
-            href="{{ url_for('static', filename='uploads/' + current_user.cv) }}"
+            href="{{ url_for('user.download_cv', filename=current_user.cv) }}"
             target="_blank"
-            >Lihat CV</a
           >
+            Lihat CV
+          </a>
           {% else %} Tidak ada file CV {% endif %}
         </p>
-        <a href="{{ url_for('edit_profile') }}" class="btn-edit">Edit Profil</a>
+
+        <a href="{{ url_for('user.edit_profile') }}" class="btn-edit"
+          >Edit Profil</a
+        >
       </div>
 
       <!-- Riwayat Lamaran -->
@@ -72,10 +76,11 @@
             <small>
               CV: {% if lamaran.file_cv %}
               <a
-                href="{{ url_for('static', filename='uploads/' + lamaran.file_cv) }}"
+                href="{{ url_for('user.download_cv', filename=lamaran.file_cv) }}"
                 target="_blank"
-                >Lihat CV</a
               >
+                Lihat CV
+              </a>
               {% else %} Tidak ada CV {% endif %}
             </small>
           </li>
@@ -131,6 +136,5 @@
         <p>&copy; 2025 Aksara Jobs. All rights reserved.</p>
       </div>
     </footer>
-
   </body>
 </html>

@@ -31,12 +31,11 @@
           />
         </button>
 
-        <button onclick="window.location.href='{{ url_for('logout') }}'">
+        <button onclick="window.location.href='{{ url_for('user.logout') }}'">
           Logout
-          
         </button>
         {% else %}
-        <button onclick="window.location.href='{{ url_for('login') }}'">
+        <button onclick="window.location.href='{{ url_for('user.login') }}'">
           Login
         </button>
         {% endif %}
@@ -55,7 +54,7 @@
       <div class="search-bar">
         <form
           method="GET"
-          action="{{ url_for('Cari') }}"
+          action="{{ url_for('user.Cari') }}"
           onsubmit="return validateSearch()"
         >
           <input
@@ -79,7 +78,7 @@
           <button
             type="button"
             class="lihat-daftar-btn"
-            onclick="window.location.href='{{ url_for('lihat_daftar_pekerjaan') }}'"
+            onclick="window.location.href='{{ url_for('user.lihat_daftar_pekerjaan') }}'"
           >
             Lihat Daftar Pekerjaan
           </button>
@@ -121,9 +120,13 @@
     <section class="cta-section">
       <h2>Yuk Daftar & Temukan Karier Impianmu Sekarang!</h2>
       {% if not current_user.is_authenticated %}
-      <a href="{{ url_for('register') }}" class="cta-button">Gabung Sekarang</a>
+      <a href="{{ url_for('user.register') }}" class="cta-button"
+        >Gabung Sekarang</a
+      >
       {% else %}
-      <a href="{{ url_for('profil') }}" class="cta-button">Lihat Profil Saya</a>
+      <a href="{{ url_for('user.profil') }}" class="cta-button"
+        >Lihat Profil Saya</a
+      >
       {% endif %}
     </section>
 

@@ -1,6 +1,8 @@
-from __init__ import db, app
+from __init__ import create_app, db
 
-# Create the database and tables within an application context 
+app = create_app()  # buat instance Flask
+
 with app.app_context():
-	db.create_all()
-	print("Database created!")
+    import models  # pastikan semua model terdaftar
+    db.create_all()
+    print("Database & tabel berhasil dibuat!")
